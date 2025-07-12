@@ -7,6 +7,9 @@ body {
     align-items: center;
     padding: 20px;
 }
+#root{
+width: 100%;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
