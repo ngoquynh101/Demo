@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@atlaskit/analytics-next-stable-react-context": "^1.0.1",
     "@atlaskit/button": "^23.2.5",
     "@atlaskit/icon": "^27.3.0",
     "@atlaskit/textfield": "^8.0.6",

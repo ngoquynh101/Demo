@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 // import { useRef } from "react"; // Không cần useRef cho localStorage nữa
 
 // URL cơ sở của API backend của bạn
-const API_BASE_URL = 'http://localhost:3000/todos';
+const API_BASE_URL = 'http://localhost:8000/todos';
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -31,7 +31,7 @@ function App() {
         id: todo.id,
         name: todo.title, // Map 'title' từ backend sang 'name' của frontend
         isCompleted: todo.completed
-      }));
+      })).reverse();
       setTodoList(formattedTodos);
     } catch (err) {
       console.error("Lỗi khi tải danh sách công việc:", err);
@@ -62,7 +62,7 @@ function App() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ title: textInput, description: "" }) // Gửi title và description (mô tả có thể trống)
+        body: JSON.stringify({ title: textInput }) // Gửi title và description (mô tả có thể trống)
       });
 
       if (!response.ok) {
@@ -77,7 +77,7 @@ function App() {
       alert("Không thể thêm công việc. Vui lòng thử lại.");
     }
   }, [textInput, fetchTodos]);
-
+ 
   // Hàm để cập nhật trạng thái hoàn thành của công việc trên backend
   const onCheckBtnClick = useCallback(async (id) => {
     // Tìm todo trong danh sách hiện tại để lấy trạng thái isCompleted hiện tại

@@ -20,7 +20,6 @@ export default function TodoList({ todoList, onCheckBtnClick, onDeleteBtnClick }
           />
         ))
       )}
-      {/* Đã loại bỏ 3 dòng <Todo /> cứng nhắc ở đây */}
     </div>
   );
 }
